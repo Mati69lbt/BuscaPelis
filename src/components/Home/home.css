@@ -1,0 +1,45 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.imb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.imb article {
+  width: 30%;
+  text-align: center;
+  margin: 1%;
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
+}
+.inicio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  width: 15%;
+}
+.link {
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+@media (max-width: 576px) {
+  a {
+    font-size: 15px;
+  }
+}
+
+.bup {
+  text-align: center;
+  margin-top: 50px;
+}
