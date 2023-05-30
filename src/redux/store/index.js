@@ -3,6 +3,6 @@ import movies from "../slices/movies";
 
 export default configureStore({
   reducer: {
-    movies,
+    movies: movies,
   },
 });

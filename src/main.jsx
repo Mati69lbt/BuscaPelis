@@ -8,6 +8,7 @@ import store from "./redux/store";
 import Favoritos from "./components/Fav/Favoritos";
 import Home from "./components/Home/Home";
 import LandingPage from "./components/Landing/LandingPage";
+import Movie from "./components/Movie/Movie";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/movie/:id",
+    element: <Movie />,
   },
   {
     path: "/favoritas",

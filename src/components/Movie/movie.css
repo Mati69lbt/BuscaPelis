@@ -1,0 +1,68 @@
+.all {
+  background-color: black;
+  height: 100vh;
+}
+.titulo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+}
+.titulo h1 {
+  width: 15%;
+}
+.titulo h2 {
+  color: red;
+  width: 30%;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  color: greenyellow;
+}
+
+.listado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style: none;
+}
+.listado b {
+  color: white;
+}
+.liiplot {
+  display: flex;
+  text-align: right;
+}
+
+@media (max-width: 576px) {
+  .titulo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .titulo h1 {
+    font-size: 30px;
+  }
+  .titulo h2 {
+    font-size: 20px;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .listado {
+    align-items: flex-start;
+  }
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-text {
+  font-size: 32px;
+}
