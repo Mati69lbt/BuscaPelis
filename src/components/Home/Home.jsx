@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../Nav/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies } from "../../redux/slices/movies";
+import { add_Movie_Favorite, getMovies } from "../../redux/slices/movies";
 import { Link } from "react-router-dom";
 import "./home.css";
 
@@ -64,7 +64,19 @@ const Home = () => {
                   </article>
                   <article>
                     {" "}
-                    <button className="nl">Favs</button>
+                    <button
+                      className="nl"
+                      onClick={() =>
+                        dispatch(
+                          add_Movie_Favorite({
+                            title: movie.Title,
+                            id: movie.imdbID,
+                          })
+                        )
+                      }
+                    >
+                      Favs
+                    </button>
                   </article>
                 </div>
               ))}

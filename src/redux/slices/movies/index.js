@@ -5,6 +5,7 @@ export const movieSlice = createSlice({
   initialState: {
     movies: [],
     movieDetail: {},
+    favorites: [],
   },
   reducers: {
     setMovies: (state, action) => {
@@ -16,12 +17,38 @@ export const movieSlice = createSlice({
     clearMovieDetail: (state) => {
       state.movieDetail = {};
     },
+    setFavorite: (state, action) => {
+      // const title = action.payload;
+      // state.favorites.push(title);
+      const newMovie = state.movies.find(
+        (movie) => movie.imdbID === action.payload.id
+      );
+      const movieInState = state.favorites.find(
+        (movie) => movie.imdbID === newMovie.imdbID
+      );
+
+      if (movieInState) {
+        alert("¡La película ya está en favoritos!");
+      } else {
+        state.favorites.push(newMovie);
+      }
+    },
+    removeFavorite: (state, action) => {
+      state.favorites = state.favorites.filter(
+        (movie) => movie.imdbID !== action.payload
+      );
+    },
   },
 });
 
 //exportar el reducer desde las actions
-export const { setMovies, setMovieDetail, clearMovieDetail } =
-  movieSlice.actions;
+export const {
+  setMovies,
+  setMovieDetail,
+  clearMovieDetail,
+  setFavorite,
+  removeFavorite,
+} = movieSlice.actions;
 
 //exporta por default movies
 export default movieSlice.reducer;
@@ -54,3 +81,15 @@ export function get_Movie_Details(id) {
     }
   };
 }
+
+export const add_Movie_Favorite = (title, id) => {
+  return async function (dispatch) {
+    dispatch(setFavorite(title, id));
+  };
+};
+
+export const remove_Movie_Favorite = (id) => {
+  return async function (dispatch) {
+    dispatch(removeFavorite(id));
+  };
+};

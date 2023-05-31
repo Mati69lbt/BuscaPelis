@@ -1,0 +1,26 @@
+.fav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fav article {
+  width: 30%;
+  text-align: center;
+  margin: 1%;
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
+}
+h2 {
+  display: flex;
+  text-align: center;
+  width: 30%;
+}
+.tituloo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+}
