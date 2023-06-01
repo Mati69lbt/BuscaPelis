@@ -9,13 +9,14 @@ const LandingPage = () => {
       <h1>BUSCADOR DE PELICULAS</h1>
 
       <div className="image">
-        {img.map((image) => (
-          <div className="image-card" key={image.id}>
-            <Link to="/home">
-              <img src={image.url} alt={image.alt} />
-            </Link>
-          </div>
-        ))}
+        {img &&
+          img.map((image) => (
+            <div className="image-card" key={image.id}>
+              <Link to="/home">
+                <img src={image.url} alt={image.alt} />
+              </Link>
+            </div>
+          ))}
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .imb {
   display: flex;
   flex-direction: row;
@@ -13,13 +17,12 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-h2 {
+.busch2 {
   width: 15%;
 }
-.link {
+.link a {
   color: white;
   text-decoration: none;
-  cursor: default;
 }
 @media (max-width: 576px) {
   a {
@@ -30,6 +33,7 @@ h2 {
 .bup {
   text-align: center;
   margin-top: 50px;
+  color: red;
 }
 
 .buscador {
@@ -37,4 +41,5 @@ h2 {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  color: red;
 }

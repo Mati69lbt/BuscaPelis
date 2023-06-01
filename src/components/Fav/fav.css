@@ -12,15 +12,20 @@
   font-size: x-large;
   font-family: "Courier New", Courier, monospace;
 }
-h2 {
-  display: flex;
-  text-align: center;
-  width: 30%;
-}
 .tituloo {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
+}
+.tith2 {
+  color: white;
+  white-space: nowrap;
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+}
+.container-fav {
+  color: white;
 }

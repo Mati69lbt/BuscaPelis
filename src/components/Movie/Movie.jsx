@@ -109,7 +109,7 @@ const Movie = () => {
           <img src={Poster} alt={Title} style={{ margin: "5px" }} />
         </div>
       </div>
-      <button onClick={() => navigate("/home")}>BACK</button>;
+      <button onClick={() => navigate(-1)}>BACK</button>;
     </div>
   );
 };

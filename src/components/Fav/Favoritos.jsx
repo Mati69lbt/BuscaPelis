@@ -7,36 +7,41 @@ import "./fav.css";
 const Favoritos = () => {
   const dispatch = useDispatch();
   const favorite = useSelector((state) => state.movies.favorites);
-  console.log(favorite);
+
   return (
     <div>
       <Navbar />
       <div>
         <div className="tituloo">
-          <h2>Peliculas Favoritas</h2>
+          <h2 className="tith2">Tus Peliculas Favoritas van Aquí!</h2>
         </div>
-
-        {favorite &&
-          favorite.map((movie) => (
-            <div key={movie.imdbID} className="fav">
-              <article className="item">
-                <img src={movie.Poster} alt={movie.title} height={120} />
-              </article>
-              <article>
-                <Link to={`/movie/${movie.imdbID}`} className="item">
-                  <span>{movie.Title}</span>
-                </Link>
-              </article>
-              <article>
-                <button
-                  onClick={() => dispatch(remove_Movie_Favorite(movie.imdbID))}
-                  className="item"
-                >
-                  X
-                </button>
-              </article>
-            </div>
-          ))}
+        <div>
+          {favorite &&
+            favorite.map((movie) => (
+              <div key={movie.imdbID} className="fav">
+                <article className="item">
+                  <Link to={`/movie/${movie.imdbID}`} className="item">
+                    <img src={movie.Poster} alt={movie.title} height={120} />
+                  </Link>
+                </article>
+                <article className="link">
+                  <Link to={`/movie/${movie.imdbID}`} className="item">
+                    <span>{movie.Title}</span>
+                  </Link>
+                </article>
+                <article>
+                  <button
+                    onClick={() =>
+                      dispatch(remove_Movie_Favorite(movie.imdbID))
+                    }
+                    className="item"
+                  >
+                    X
+                  </button>
+                </article>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

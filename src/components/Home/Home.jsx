@@ -25,7 +25,7 @@ const Home = () => {
 
       <div className="cuerpo">
         <div className="buscador">
-          <h2>Buscador: </h2>
+          <h2 className="busch2">Buscador: </h2>
           <form onSubmit={(e) => handleSubmit(e)}>
             <input
               id="title"
@@ -41,47 +41,59 @@ const Home = () => {
             </button>
           </form>
         </div>
-      </div>
-      <div>
-        {!movies || movies.length === 0 ? (
-          <h1 className="bup">Buscate una Peli!!</h1>
-        ) : (
-          <>
-            <div className="imb">
-              <article>Poster</article>
-              <article>Pelicula</article>
-              <article>Fav</article>
-            </div>
-            {movies &&
-              movies.map((movie) => (
-                <div key={movie.imdbID} className="imb">
-                  <article>
-                    <img src={movie.Poster} alt={movie.title} height={120} />
-                  </article>
-                  <article className="link">
-                    {" "}
-                    <Link to={`/movie/${movie.imdbID}`}>{movie.Title}</Link>
-                  </article>
-                  <article>
-                    {" "}
-                    <button
-                      className="nl"
-                      onClick={() =>
-                        dispatch(
-                          add_Movie_Favorite({
-                            title: movie.Title,
-                            id: movie.imdbID,
-                          })
-                        )
-                      }
-                    >
-                      Favs
-                    </button>
-                  </article>
-                </div>
-              ))}
-          </>
-        )}
+        <div>
+          {!movies || movies.length === 0 ? (
+            <h1 className="bup">
+              &quot;Quizás estés en la búsqueda de una película
+              <br />
+              o puede ser que lo que buscas no esté disponible,
+              <br />
+              pero lamentablemente no se pudo encontrar lo que deseas.&quot;
+            </h1>
+          ) : (
+            <>
+              <div className="imb">
+                <article>Poster</article>
+                <article>Pelicula</article>
+                <article>Fav</article>
+              </div>
+              {movies &&
+                movies.map((movie) => (
+                  <div key={movie.imdbID} className="imb">
+                    <article>
+                      <Link to={`/movie/${movie.imdbID}`}>
+                        <img
+                          src={movie.Poster}
+                          alt={movie.title}
+                          height={120}
+                        />
+                      </Link>
+                    </article>
+                    <article className="link">
+                      {" "}
+                      <Link to={`/movie/${movie.imdbID}`}>{movie.Title}</Link>
+                    </article>
+                    <article>
+                      {" "}
+                      <button
+                        className="nl"
+                        onClick={() =>
+                          dispatch(
+                            add_Movie_Favorite({
+                              title: movie.Title,
+                              id: movie.imdbID,
+                            })
+                          )
+                        }
+                      >
+                        Favs
+                      </button>
+                    </article>
+                  </div>
+                ))}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
