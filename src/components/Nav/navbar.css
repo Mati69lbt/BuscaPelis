@@ -92,3 +92,24 @@ hr {
 .Btn:hover .svgIcon path {
   fill: rgb(65, 64, 64);
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .Btn {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: flex;
+  }
+  .title {
+    size: 10px;
+  }
+}

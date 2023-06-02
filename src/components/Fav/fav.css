@@ -55,8 +55,16 @@
   }
 }
 
-@media (max-width: 480px) {
-  .fav article {
-    width: 100%;
+@media (max-width: 768px) {
+  .fav {
+    flex-wrap: nowrap;
+  }
+
+  .item {
+    flex: 0 0 50%;
+  }
+
+  .cross {
+    flex: 0 0 50%;
   }
 }

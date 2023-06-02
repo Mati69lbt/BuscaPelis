@@ -34,3 +34,23 @@ body {
   height: auto;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .image-card {
+    flex-basis: 33.33%; /* Cambia a 33.33% para mostrar 3 columnas en pantallas más pequeñas */
+  }
+
+  .image-card img {
+    width: 70%; /* Reduce el tamaño de la imagen para adaptarse al ancho de la tarjeta */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card {
+    flex-basis: 50%; /* Cambia a 50% para mostrar 2 columnas en pantallas aún más pequeñas */
+  }
+
+  .image-card img {
+    width: 90%; /* Reduce aún más el tamaño de la imagen para adaptarse al ancho de la tarjeta */
+  }
+}
