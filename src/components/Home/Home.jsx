@@ -11,9 +11,6 @@ const Home = () => {
   const state = useSelector((state) => state);
   const { movies, favorites } = state.movies;
 
-  console.log(favorites);
-  console.log(movies);
-
   const handleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -106,8 +103,6 @@ const Home = () => {
                         >
                           <path d="M288 448H64V224h64V160H64c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H288c35.3 0 64-28.7 64-64V384H288v64zm-64-96H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224c-35.3 0-64 28.7-64 64V288c0 35.3 28.7 64 64 64z"></path>
                         </svg>
-
-                        {/* compara el favorites.imdbID con el movie.imbdID */}
                         {favorites.some(
                           (fav) => fav.imdbID === movie.imdbID
                         ) ? (
