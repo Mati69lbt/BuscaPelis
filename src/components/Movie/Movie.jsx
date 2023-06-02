@@ -106,7 +106,15 @@ const Movie = () => {
           </ul>
         </div>
         <div className="flex-item">
-          <img src={Poster} alt={Title} style={{ margin: "5px" }} />
+          <img
+            src={
+              Poster !== "N/A"
+                ? Poster
+                : "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg"
+            }
+            alt={Title}
+            style={{ margin: "5px" }}
+          />
         </div>
       </div>
       <button onClick={() => navigate(-1)} className="Btn">

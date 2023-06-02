@@ -73,7 +73,11 @@ const Home = () => {
                     <article>
                       <Link to={`/movie/${movie.imdbID}`}>
                         <img
-                          src={movie.Poster}
+                          src={
+                            movie.Poster !== "N/A"
+                              ? movie.Poster
+                              : "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg"
+                          }
                           alt={movie.title}
                           height={120}
                         />
