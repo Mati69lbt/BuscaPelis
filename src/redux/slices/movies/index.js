@@ -18,8 +18,6 @@ export const movieSlice = createSlice({
       state.movieDetail = {};
     },
     setFavorite: (state, action) => {
-      // const title = action.payload;
-      // state.favorites.push(title);
       const newMovie = state.movies.find(
         (movie) => movie.imdbID === action.payload.id
       );
