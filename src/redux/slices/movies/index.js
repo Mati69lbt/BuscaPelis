@@ -55,7 +55,7 @@ export function getMovies(title) {
   return async function (dispatch) {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=6d022ee2&s=${title}`
+        `https://www.omdbapi.com/?apikey=6d022ee2&s=${title}`
       );
       const movies = await response.json();
       return dispatch(setMovies(movies.Search));
@@ -70,7 +70,7 @@ export function get_Movie_Details(id) {
   return async function (dispatch) {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=6d022ee2&i=${imdbID}`
+        `https://www.omdbapi.com/?apikey=6d022ee2&i=${imdbID}`
       );
       const detail = await response.json();
       dispatch(setMovieDetail(detail));
